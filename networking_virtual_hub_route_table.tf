@@ -63,6 +63,7 @@ module "azurerm_virtual_hub_route_table" {
   settings      = each.value
 
   remote_objects = {
+    virtual_hub_connection  = local.combined_objects_virtual_hub_connections
     virtual_hub_connections = local.combined_objects_virtual_hub_connections
     azurerm_firewalls       = local.combined_objects_azurerm_firewalls
   }
@@ -86,13 +87,5 @@ module "azurerm_virtual_hub_route_table" {
       try(local.combined_objects_resource_groups[try(each.value.resource_group.lz_key, local.client_config.landingzone_key)][each.value.resource_group.key].name, null),
       try(each.value.virtual_hub.resource_group_name, "")
     )
-  }
-
-  resource_ids = {
-    #
-    # Removing support for vhub connection in route table to prevent circula references
-    # Interim support - Adding only remote virtual_hub_connections. route tables must be deployed in a different tfstate
-    #
-    virtual_hub_connection = try(var.remote_objects.virtual_hub_connections, {})
   }
 }
