@@ -315,6 +315,21 @@ variable "aks_clusters" {
 variable "azure_container_registries" {
   default = {}
 }
+variable "batch_accounts" {
+  default = {}
+}
+variable "batch_applications" {
+  default = {}
+}
+variable "batch_certificates" {
+  default = {}
+}
+variable "batch_jobs" {
+  default = {}
+}
+variable "batch_pools" {
+  default = {}
+}
 variable "databricks_workspaces" {
   default = {}
 }
@@ -535,6 +550,9 @@ variable "vhub_peerings" {
   description = "Use virtual_hub_connections instead of vhub_peerings. It will be removed in version 6.0"
 }
 variable "virtual_hub_connections" {
+  default = {}
+}
+variable "virtual_hub_route_table_routes" {
   default = {}
 }
 variable "virtual_hub_route_tables" {
@@ -829,5 +847,68 @@ variable "monitor_activity_log_alert" {
   default = {}
 }
 variable "log_analytics_storage_insights" {
+  default = {}
+}
+variable "purview_accounts" {
+  default = {}
+}
+variable "app_config" {
+  default = {}
+}
+variable "cosmosdb_sql_databases" {
+  default = {}
+}
+variable "sentinel" {
+  default = {}
+}
+variable "sentinel_automation_rules" {
+  default = {}
+}
+variable "sentinel_watchlists" {
+  default = {}
+}
+variable "sentinel_watchlist_items" {
+  default = {}
+}
+variable "sentinel_ar_fusions" {
+  default = {}
+}
+variable "sentinel_ar_ml_behavior_analytics" {
+  default = {}
+}
+variable "sentinel_ar_ms_security_incidents" {
+  default = {}
+}
+variable "sentinel_ar_scheduled" {
+  default = {}
+}
+variable "sentinel_dc_aad" {
+  default = {}
+}
+variable "sentinel_dc_app_security" {
+  default = {}
+}
+variable "sentinel_dc_aws" {
+  default = {}
+}
+variable "sentinel_dc_azure_threat_protection" {
+  default = {}
+}
+variable "sentinel_dc_ms_threat_protection" {
+  default = {}
+}
+variable "sentinel_dc_office_365" {
+  default = {}
+}
+variable "sentinel_dc_security_center" {
+  default = {}
+}
+variable "sentinel_dc_threat_intelligence" {
+  default = {}
+}
+variable "public_ip_prefixes" {
+  default = {}
+}
+variable "runbooks" {
   default = {}
 }
